@@ -4,17 +4,8 @@
  */
 package hw01_punchline_cgronblom;
 
-/**
- *
- * @author Cyrus
- */
 public class HW01_Punchline_cgronblom {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+        System.out.println("Hello World"); // Prints Hello World
+    }    
 }
