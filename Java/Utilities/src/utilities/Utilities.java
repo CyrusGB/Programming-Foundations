@@ -13,9 +13,9 @@ public class Utilities {
     // Driver method, main
     public static void main(String[] args) {
         // Create new title object
-        Title title = new Title("title hehe");
-        // Print title
-        title.printTitle();
+        Title title = new Title();
+        // Print title by passing in example parameters
+        title.printTitle("Example Title", "Example Tagline");
         
         // Go Again
         GoAgain goAgain = new GoAgain();

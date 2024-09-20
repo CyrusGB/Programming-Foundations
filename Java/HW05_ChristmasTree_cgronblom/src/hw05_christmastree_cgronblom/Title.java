@@ -6,7 +6,7 @@
  ************************
  */
 
-package utilities;
+package hw05_christmastree_cgronblom;
 
 public class Title {
     

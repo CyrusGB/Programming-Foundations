@@ -6,7 +6,7 @@
  ************************
  */
 
-package utilities;
+package hw02_mpg_cgronblom;
 
 public class Title {
     

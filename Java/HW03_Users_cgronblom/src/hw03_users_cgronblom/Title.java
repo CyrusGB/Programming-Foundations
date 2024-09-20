@@ -6,7 +6,7 @@
  ************************
  */
 
-package utilities;
+package hw03_users_cgronblom;
 
 public class Title {
     
@@ -15,7 +15,7 @@ public class Title {
         // Print title
         System.out.println(title);
         // Print tagline
-        System.out.println("\t" + tagline + "\n");
+        System.out.println(tagline + "\n");
     } // END PRINT TITLE
     
 } // END CLASS

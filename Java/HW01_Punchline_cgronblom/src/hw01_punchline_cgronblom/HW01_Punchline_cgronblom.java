@@ -15,7 +15,7 @@ public class HW01_Punchline_cgronblom {
     // The driver method
     public static void main(String[] args) {
         
-        // Instansiate  an instance of a Scanner class to read user input
+        // Instansiate an instance of a Scanner class to read user input
         Scanner input = new Scanner(System.in);
         
         // Vars to hold joke and punchline
@@ -32,7 +32,8 @@ public class HW01_Punchline_cgronblom {
         strUser = input.next();
         
         // Joke | Program branches here
-        // Print joke if user wants to hear a joke
+        // Print joke if user wants to hear a joke then,
+        // Print punchline if user wants to see the punchline
         if(strUser.equalsIgnoreCase("y") || strUser.equalsIgnoreCase("yes")){ 
             System.out.print("\n" + strJoke + "\n");
             // Prompt user for punchline
@@ -47,9 +48,11 @@ public class HW01_Punchline_cgronblom {
                 // Print out punchline 
                 System.out.println("\n" + strPunchline);
             } // END PUNCHLINE IF STATEMENT
+            
         } // END OF JOKE IF STATEMENT
         
         // Print Goodbye at the end of program
         System.out.println("\nGoodbye!\n");
     } // END MAIN
+    
 } // END CLASS

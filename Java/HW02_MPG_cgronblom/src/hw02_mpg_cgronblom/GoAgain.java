@@ -6,7 +6,7 @@
  * **********************
  */
 
-package utilities;
+package hw02_mpg_cgronblom;
 
 import java.util.Scanner;
 
@@ -29,6 +29,28 @@ public class GoAgain {
             
             // Add Source code here
             // --------------------
+            
+            // Get input from user
+            System.out.print("Enter Miles: ");
+            // Miles traveled
+            float miles = userInput.nextFloat();
+            // KM's traveled
+            float kilometers = miles * 1.609344f;
+            
+            System.out.print("Enter Gallons: ");
+            
+            // Gallons used
+            float gallons = userInput.nextFloat();
+            // Liters used
+            float liters = gallons * 3.785f;
+            
+            // Calculate miles per gallon
+            float mPG = miles / gallons;
+            // Calculate liters per 100 kilometers
+            float lP100km = liters / kilometers * 100;
+            
+            // Print out fuel efficiency
+            System.out.println("\nYour car achieved a fuel efficiency of " + (int) mPG + " MPG and " + (int) lP100km + " L/100KM.");
             
             // --------------------
             // End Source code
