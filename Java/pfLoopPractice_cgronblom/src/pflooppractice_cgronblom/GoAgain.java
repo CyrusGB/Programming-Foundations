@@ -6,7 +6,7 @@
  * **********************
  */
 
-package utilities;
+package pflooppractice_cgronblom;
 
 import java.util.Scanner;
 
@@ -30,6 +30,22 @@ public class GoAgain {
             // Add Source code here
             // --------------------
             
+            // Size of multiplication table
+            int intTableSize = 0;
+            
+            // Ask user for table size
+            while (intTableSize <= 0) { // Make sure table size is valid
+                System.out.print("How large of a multiplication table would you like? (Input must be greater than 0): ");
+                try {
+                    intTableSize = userInput.nextInt();
+                } catch (Exception e) {
+                }
+                
+            }
+            
+            // Generate Table
+            generateTable(intTableSize);
+            
             // --------------------
             // End Source code
             
@@ -42,5 +58,17 @@ public class GoAgain {
         } // END while()
         
     } // END goAgain()
+    
+    // Generate a table of a given size
+    public void generateTable(int size){
+        
+        for (int intRow = 1; intRow <= size; intRow++) {
+            for (int intCol  = 1; intCol <= size; intCol++) {
+                System.out.printf(("%4d"), intRow * intCol);
+            }
+            System.out.println("");
+        }
+        
+    } // END generateTable()
     
 } // END CLASS

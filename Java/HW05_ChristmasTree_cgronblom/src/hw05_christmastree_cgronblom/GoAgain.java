@@ -80,17 +80,17 @@ public class GoAgain {
         // Trunk 
         
         int intTrunkHeight = rows / 4; // Height of trunk
-        int intTrunkWidth = rows / 4; // Width of trunk
+        int intTrunkWidth = 3; // Width of trunk
         
         String strTrunkRow = ""; // Row to be printed
         
         // Add spaces
-        for (int spaces = 0; spaces < (rows + 1) - (intTrunkWidth / 2); spaces++) {
+        for (int spaces = 0; spaces < rows; spaces++) {
             strTrunkRow += " ";
         }
         
         // Add Stars
-        for (int stars = 0; stars < intTrunkWidth + 1; stars++) {
+        for (int stars = 0; stars < intTrunkWidth; stars++) {
             strTrunkRow += "*";
         }
         
