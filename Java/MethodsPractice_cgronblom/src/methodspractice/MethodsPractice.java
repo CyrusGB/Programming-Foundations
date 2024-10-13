@@ -10,6 +10,7 @@
  *****************************************************/
 package methodspractice;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -41,26 +42,32 @@ public class MethodsPractice
             // Write a method to get the dimensions of a rectangle. done
             // Write a method to calculate the area of a rectangle. done
             // Rectangle
-            Rectangle rect = getRect();
-            System.out.println("The area of that rectangle is: " + rect.getArea() + "\n");
+            getRect();
             
             // Write a method to get the dimensions of a triangle. done
             // Write a method to calculate the area of a triangle. done
             // Triangle
-            Triangle tri = getTri();
-            System.out.println("The area of that triangle is: " + tri.getArea() + "\n");
+            getTri();
             
-            System.out.println("The Acreage of your lot is: " + getAcreage() + "\n");
+            System.out.println("The Acreage of your lot is: " + getAcreage()+ "\n");
             
             // Write a method to calculate temperature converter. 
             // Temp Calculator
+            System.out.print("Please enter farenheit temp to convert to celcius: ");
+            int cel = userInput.nextInt();
+            System.out.println("That temperature converted to celcius is: " + getCelcius(cel));
             
             // Write a method to convert currency from dollars to 
             // Euros, British pounds and to Canadian dollars.
+            System.out.print("\nEnter dollar amount: ");
+            double amount = userInput.nextDouble();
+            System.out.print("Enter the conversion rate: ");
+            double rate = userInput.nextDouble();
+            System.out.println("The converted amount is: " + convertCurrency(amount, rate));
             
             // End source code
             
-            System.out.print("Would you like to go again?: ");
+            System.out.print("\nWould you like to go again?: ");
             strKeepGoing = userInput.next();
         }
         
@@ -74,7 +81,7 @@ public class MethodsPractice
     }// End squareIt()
     
     // Creates a new rectangle object by prompting the user for the dimensions
-    static Rectangle getRect(){
+    static void getRect(){
         
         // Prompt for width
         System.out.print("Please input the width of a rectangle: ");
@@ -84,39 +91,67 @@ public class MethodsPractice
         System.out.print("Please input the height of a rectangle: ");
         double dblHeight = userInput.nextDouble();
         
-        // Return new rectangle
-        return new Rectangle(dblWidth, dblHeight);
+        // Print out the acreage
+        System.out.println("\nThe area of a " + dblWidth + "x" + dblHeight + " rectangle is: " + getRectArea(dblWidth, dblHeight) + "^2\n");
         
     } // END getRect()
     
-    static Triangle getTri(){
+    // Get the area of a rectangle using the width and height
+    static double getRectArea(double width, double height){
+        return width * height;
+    } // End getRectArea()
+    
+    static void getTri(){
 
-        // Prompt for width
-        System.out.print("Please input the width of a triangle: ");
-        double dblWidth = userInput.nextDouble();
+        double[] dblXPositions = new double[3]; // X positions
+        double[] dblYPositions = new double [3]; // Y positions
         
-        // Prompt for height
-        System.out.print("Please input the height of a triangle: ");
-        double dblHeight = userInput.nextDouble();
+        // Get points
+        for (int timesAsked = 0; timesAsked < 3; timesAsked++) {
+            System.out.print("Please enter a point of a triangle ("+ String.valueOf(timesAsked + 1) + "). (ie: X,Y): ");
+            String strPos = userInput.next();
+            dblXPositions[timesAsked] = Double.valueOf(strPos.split(",")[0]);
+            dblYPositions[timesAsked] = Double.valueOf(strPos.split(",")[1]);
+//            System.out.println(dblXPositions[timesAsked] + "," + dblYPositions[timesAsked]);
+            
+        } // End pts
         
-        // Return new Triangle
-        return new Triangle(dblWidth, dblHeight);
+        System.out.println("\nThe area of that triangle is: " + getTriArea(dblXPositions, dblYPositions) + "^2\n");
         
+    } // END getTri()
+    
+    // Get the area of a triangle from 3 points
+    static double getTriArea(double[] xPositions, double[] yPositions){
+        // A = (1/2) |x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2)|
+        // The area of that triangle lies before you...
+        return 0.5 * Math.abs((xPositions[0] * (yPositions[1] - yPositions[2])) + (xPositions[1] * (yPositions[2] - yPositions[0])) + (xPositions[2] * (yPositions[0] - yPositions[1])));
     }
     
+    
+    // Get the acreage of a plot of land
     static double getAcreage(){
         
         // Prompt for width
         System.out.print("Please input the width of your lot: ");
-        double dblWidth = userInput.nextDouble();
+        double dblWidth = userInput.nextDouble(); // Width of lot
         
         // Prompt for height
         System.out.print("Please input the length of your lot: ");
-        double dblHeight = userInput.nextDouble();
+        double dblHeight = userInput.nextDouble(); // Height of lot
         
-        return (dblWidth * dblHeight) / 43560;
+        return (dblWidth * dblHeight) / 43560; // Return the acreage
+        
+    } // END getAcreage()
+    
+    // Convert Farenheit to Celcius
+    static int getCelcius(int farenheit){
+        return 5 / 9 * (farenheit - 32); // Return converted temp
     }
     
+    // Convert any currency to another currency with a set rate.
+    static double convertCurrency(double amount, double rate){
+        return amount * rate; // Return converted amount
+    }
     
 } // END OF CLASS.
  
