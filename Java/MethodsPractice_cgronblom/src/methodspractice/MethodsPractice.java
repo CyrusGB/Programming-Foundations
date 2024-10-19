@@ -27,7 +27,6 @@ public class MethodsPractice
     
     public static void keepGoing(){
         
-        
         String strKeepGoing = "y";
         
         while(strKeepGoing.equalsIgnoreCase("y")) {
@@ -51,14 +50,15 @@ public class MethodsPractice
             
             System.out.println("The Acreage of your lot is: " + getAcreage()+ "\n");
             
-            // Write a method to calculate temperature converter. 
+            // Write a method to calculate temperature converter. done
             // Temp Calculator
             System.out.print("Please enter farenheit temp to convert to celcius: ");
             int cel = userInput.nextInt();
             System.out.println("That temperature converted to celcius is: " + getCelcius(cel));
             
             // Write a method to convert currency from dollars to 
-            // Euros, British pounds and to Canadian dollars.
+            // Euros, British pounds and to Canadian dollars. done? we did this such that it can convert any currency in class so im confused
+            // I could rewrite to convert or leave this idk?
             System.out.print("\nEnter dollar amount: ");
             double amount = userInput.nextDouble();
             System.out.print("Enter the conversion rate: ");
@@ -78,7 +78,7 @@ public class MethodsPractice
     static double squareIt(double number){
         // Return squared number
         return Math.pow(number, 2);
-    }// End squareIt()
+    }// END squareIt()
     
     // Creates a new rectangle object by prompting the user for the dimensions
     static void getRect(){
@@ -99,23 +99,25 @@ public class MethodsPractice
     // Get the area of a rectangle using the width and height
     static double getRectArea(double width, double height){
         return width * height;
-    } // End getRectArea()
+    } // END getRectArea()
     
     static void getTri(){
 
         double[] dblXPositions = new double[3]; // X positions
         double[] dblYPositions = new double [3]; // Y positions
         
-        // Get points
+        // Ask for 3 points of a triangle
         for (int timesAsked = 0; timesAsked < 3; timesAsked++) {
-            System.out.print("Please enter a point of a triangle ("+ String.valueOf(timesAsked + 1) + "). (ie: X,Y): ");
+            System.out.print("Please enter a point of a triangle ("+ String.valueOf(timesAsked + 1) + "). (ie: X,Y): "); // Prompt
             String strPos = userInput.next();
+            // Add input to list of pts
             dblXPositions[timesAsked] = Double.valueOf(strPos.split(",")[0]);
             dblYPositions[timesAsked] = Double.valueOf(strPos.split(",")[1]);
-//            System.out.println(dblXPositions[timesAsked] + "," + dblYPositions[timesAsked]);
+            //System.out.println(dblXPositions[timesAsked] + "," + dblYPositions[timesAsked]);
             
-        } // End pts
+        } // END pts
         
+        //Print area
         System.out.println("\nThe area of that triangle is: " + getTriArea(dblXPositions, dblYPositions) + "^2\n");
         
     } // END getTri()
@@ -125,7 +127,7 @@ public class MethodsPractice
         // A = (1/2) |x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2)|
         // The area of that triangle lies before you...
         return 0.5 * Math.abs((xPositions[0] * (yPositions[1] - yPositions[2])) + (xPositions[1] * (yPositions[2] - yPositions[0])) + (xPositions[2] * (yPositions[0] - yPositions[1])));
-    }
+    } // END getTriArea()
     
     
     // Get the acreage of a plot of land
@@ -146,12 +148,12 @@ public class MethodsPractice
     // Convert Farenheit to Celcius
     static int getCelcius(int farenheit){
         return 5 / 9 * (farenheit - 32); // Return converted temp
-    }
+    } // END getCelcius()
     
     // Convert any currency to another currency with a set rate.
     static double convertCurrency(double amount, double rate){
         return amount * rate; // Return converted amount
-    }
+    } // END convertCurrency()
     
 } // END OF CLASS.
  
