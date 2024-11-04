@@ -30,17 +30,51 @@ public class GoAgain {
             // Add Source code here
             // --------------------
             
+            // -----
+            // List multiplication
+            // -----
+
+            // Get number from user
+            System.out.print("Please input a number to get the multiples of: ");
+            int number = userInput.nextInt();
+
+            // Print multiples up to 12x
+            for (int i = 0; i < 12; i++) {
+                System.out.print(String.valueOf((i+1) * number) + " ");
+            }
+
+            // Add return
+            System.out.println();
+            
+            // -----
+            // Reverse Number
+            // -----
+
+            // Reset input
+            number = 0;
+            
+            // Keep asking for 5 digit number
+            while(String.valueOf(number).length() != 5){
+                // Get number from user
+                System.out.print("\nPlease insert a 5 digit number to reverse: ");
+                number = userInput.nextInt();
+            }
+            
+            // Reverse the number
+            System.out.println("That number reversed is: " + reverse(String.valueOf(number)));
+
+            // -----
+            // Multiplication Table
+            // -----
+
             // Size of multiplication table
             int intTableSize = 0;
             
             // Ask user for table size
             while (intTableSize <= 0) { // Make sure table size is valid
+                // Get table size from user
                 System.out.print("How large of a multiplication table would you like? (Input must be greater than 0): ");
-                try {
-                    intTableSize = userInput.nextInt();
-                } catch (Exception e) {
-                }
-                
+                intTableSize = userInput.nextInt();
             }
             
             // Generate Table
@@ -57,6 +91,9 @@ public class GoAgain {
             
         } // END while()
         
+        // Close user input to avoid resource leak
+        userInput.close();
+
     } // END goAgain()
     
     // Generate a table of a given size
@@ -70,5 +107,13 @@ public class GoAgain {
         }
         
     } // END generateTable()
+
+    public String reverse(String str){
+        String reversed = "";
+        for(int i = 0; i < str.length(); i++){
+            reversed += str.charAt(str.length()-1-i);
+        }
+        return reversed;
+    }
     
 } // END CLASS
