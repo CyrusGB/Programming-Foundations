@@ -1,8 +1,8 @@
 /************************
- * Title:
- * Date:
+ * Title: Craps Player
+ * Date: November 2024
  * Author: Cyrus Gronblom
- * Purpose:
+ * Purpose: Player data for craps
  * **********************
  */
 

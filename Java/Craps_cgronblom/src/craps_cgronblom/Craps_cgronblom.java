@@ -1,8 +1,8 @@
 /************************
- * Title:
- * Date:
+ * Title: Craps
+ * Date: November 2024
  * Author: Cyrus Gronblom
- * Purpose:
+ * Purpose: Make a working craps game
  * **********************
  */
 
