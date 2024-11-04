@@ -22,6 +22,11 @@ public class Craps_cgronblom {
         // Start the loop and ask user if they want to go again after
         goAgain.goAgain();
 
+        // Game variables
+        // float currentBet;
+        // float hopBet;
+        // int desiredDiceValue;
+
     } // END MAIN
 
 } // END CLASS
