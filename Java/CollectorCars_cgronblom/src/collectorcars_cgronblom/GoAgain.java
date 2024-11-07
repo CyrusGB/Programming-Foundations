@@ -9,8 +9,6 @@
 package collectorcars_cgronblom;
 
 import java.util.Scanner;
-
-import java.io.*;
 import java.util.ArrayList;
 
 public class GoAgain {
@@ -32,8 +30,16 @@ public class GoAgain {
             // Add Source code here
             // --------------------
             
+            // Add crud capability
+            // Create [record]
+            // Read [record]
+            // Update [record]
+            // Delete [record]
             
-            
+            ArrayList<Car> lstCars = new ArrayList<Car>();
+
+            Car carGolf = addCar(lstCars, 1982, "Volkswagen", "Golf GTI Mk2", "Midnight Blue-Pearl");
+
             // --------------------
             // End Source Code
             
@@ -48,5 +54,11 @@ public class GoAgain {
         userInput.close();
 
     } // END goAgain()
+
+    public Car addCar(ArrayList<Car> cars, int year, String make, String model, String color){
+        Car newCar = new Car(year, make, model, color);
+        cars.add(newCar);
+        return newCar;
+    }
     
 } // END CLASS

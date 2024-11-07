@@ -17,7 +17,7 @@ public class CollectorCars_cgronblom {
         GoAgain goAgain = new GoAgain();
         
         // Print Title
-        title.printTitle("Collector Cars", "Cars I guess");
+        title.printTitle("Cyrus' Grand Car Collection", "Volkswagen Golf R pleaseeeeeeeeeeee");
 
         // Start the loop and ask user if they want to go again after
         goAgain.goAgain();
