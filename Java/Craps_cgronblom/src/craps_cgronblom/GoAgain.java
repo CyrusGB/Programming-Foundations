@@ -217,12 +217,9 @@ public class GoAgain {
         System.out.println(player);
 
         ArrayList<String> menuItems = new ArrayList<String>();
-        menuItems.add("~----------~");
         menuItems.add("Bet on a win");
         menuItems.add("Hop Bet (Bet on a dice value)");
-        menuItems.add("~----------~");
         menuItems.add("Ready to play");
-        menuItems.add("~----------~");
 
         Menu playMenu = new Menu();
         int selection = playMenu.showMenu("Play Menu", menuItems);
@@ -234,17 +231,57 @@ public class GoAgain {
             case 2: // Hop bet
                 hopBet(player);    
                 break;    
-            case 4: // Play a round
-                playARound();
+            case 3: // Play a round
+                playARound(player);
                 break;  
-            default: // player chose one of the decorative options
-                showPlayMenu(player);
-                break;
         }
     }
 
-    void playARound(){
+    void playARound(CrapsPlayer player){
+        int first = rollDice();
+        int second = rollDice();
+        
+        // Check if keep rolling
+        if (first + second == 7 || first + second == 11){
+            System.out.println("WIN! through normal");
+            player.currentMoney += player.bet * 2;
+            player.bet = 0;
+        }else if (first + second == 2 || first + second == 3 || first + second == 12){
+            System.out.println("You crapped out... lose");
+            // Dont take money from player becuase its already been taken and stored in the bet var
+            player.bet = 0;
 
+            if (player.currentMoney == 0 && player.hopBet == 0){
+                lose(player);
+                return;
+            }
+        }
+
+        if (player.hopBet != 0){
+            if (first + second == player.desiredDiceValue){
+                System.out.println("Win! through hop bet");
+                player.currentMoney += player.hopBet * 2;
+            }else{
+                System.out.println("Lose hop bet");
+                player.hopBet = 0;
+                if (player.currentMoney == 0){
+                    lose(player);
+                }
+            }
+        }
+        
+
+        System.out.print("Keep playing?: ");
+        Scanner keepPlay = new Scanner(System.in);
+        boolean boolKeep = keepPlay.next().equalsIgnoreCase("y");
+        if (boolKeep) {
+            showPlayMenu(player);
+        }
+
+    }
+
+    void lose(CrapsPlayer player){
+        System.out.println("YOU LOse!");
     }
 
     int rollDice(){
@@ -295,7 +332,7 @@ public class GoAgain {
             
         }
 
-        userInput.close();
+        
 
         player.desiredDiceValue = diceValue;
         
