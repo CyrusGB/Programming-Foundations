@@ -1,9 +1,10 @@
 /************************
- * Title:
- * Date:
+ * Title: Flooring
+ * Date: 11/26/24
  * Author: Cyrus Gronblom
- * Purpose:
+ * Purpose: Create a program for a client who wants be a flooring contractor
  * **********************
+ * https://keene.instructure.com/courses/2289958/assignments/33878302
  */
 
 package hw06_flooring_cgronblom;
@@ -17,7 +18,7 @@ public class HW06_Flooring_cgronblom {
         GoAgain goAgain = new GoAgain();
         
         // Print Title
-        title.printTitle("Example Title", "Example Tagline");
+        title.printTitle("Flooring", "Get some flooring redone!");
 
         // Start the loop and ask user if they want to go again after
         goAgain.goAgain();

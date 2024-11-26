@@ -4,6 +4,7 @@
  * Author: Cyrus Gronblom
  * Purpose: Make a working craps game
  * **********************
+ * https://keene.instructure.com/courses/2289958/assignments/35372506
  */
 
 package craps_cgronblom;

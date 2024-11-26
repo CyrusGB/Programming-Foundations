@@ -272,6 +272,7 @@ public class GoAgain {
         
 
         System.out.print("Keep playing?: ");
+        @SuppressWarnings("resource")
         Scanner keepPlay = new Scanner(System.in);
         boolean boolKeep = keepPlay.next().equalsIgnoreCase("y");
         if (boolKeep) {
@@ -323,6 +324,7 @@ public class GoAgain {
     // Bet on a dice value
     void hopBet(CrapsPlayer player){
 
+        @SuppressWarnings("resource")
         Scanner userInput = new Scanner(System.in);
 
         int diceValue = 0;
