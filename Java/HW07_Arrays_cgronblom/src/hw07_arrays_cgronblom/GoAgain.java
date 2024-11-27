@@ -10,6 +10,8 @@ package hw07_arrays_cgronblom;
 
 import java.util.Scanner;
 
+import java.util.ArrayList;
+
 public class GoAgain {
     
     // Ask user if they want to continue the loop
@@ -29,7 +31,13 @@ public class GoAgain {
             // Add Source code here
             // --------------------
 
+            ArrayList<String> lstItems = new ArrayList<String>();
+            for (int index = 0; index < 12; index++) {
+                lstItems.add(String.valueOf(index));
+            }
 
+            MultiColumnMenu menu = new MultiColumnMenu("Test", "We testing: ", lstItems, 3);
+            menu.showMenu();
 
             // --------------------
             // End Source Code
