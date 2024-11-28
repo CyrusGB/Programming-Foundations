@@ -18,7 +18,7 @@ public class HW07_Arrays_cgronblom {
         GoAgain goAgain = new GoAgain();
         
         // Print Title
-        title.printTitle("Example Title", "Example Tagline");
+        title.printTitle("Months of the Year", "You should know this by now!");
 
         // Start the loop and ask user if they want to go again after
         goAgain.goAgain();

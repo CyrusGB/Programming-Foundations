@@ -31,13 +31,28 @@ public class GoAgain {
             // Add Source code here
             // --------------------
 
-            ArrayList<String> lstItems = new ArrayList<String>();
-            for (int index = 0; index < 12; index++) {
-                lstItems.add(String.valueOf(index));
-            }
+            // List of months
+            ArrayList<String> lstMonths = new ArrayList<String>();
+            lstMonths.add("January");
+            lstMonths.add("Feburary");
+            lstMonths.add("March");
+            lstMonths.add("April");
+            lstMonths.add("May");
+            lstMonths.add("June");
+            lstMonths.add("July");
+            lstMonths.add("August");
+            lstMonths.add("September");
+            lstMonths.add("October");
+            lstMonths.add("November");
+            lstMonths.add("December");
 
-            MultiColumnMenu menu = new MultiColumnMenu("Test", "We testing: ", lstItems, 3);
-            menu.showMenu();
+            // Create menu
+            MultiColumnMenu monthsMenu = new MultiColumnMenu("Months of The Year", "Select a Month: ", lstMonths, 2);
+            // Selection
+            int intSelection = monthsMenu.showMenu();
+            
+            // Print response
+            System.out.println("You chose " + lstMonths.get(intSelection) + ", the " + String.valueOf(intSelection + 1) + getSuffix(intSelection + 1) + " month of the year.");
 
             // --------------------
             // End Source Code
@@ -53,5 +68,21 @@ public class GoAgain {
         userInput.close();
 
     } // END goAgain()
+
+    // Get the suffix for a number (1 -> st / 2 -> nd / etc.)
+    String getSuffix(int intNumber){
+        // "For the cases between 11 and 13 return th"
+        if (intNumber >= 11 && intNumber <= 13) { 
+            return "th";
+        }
+
+        // Return suffix otherwise
+        switch (intNumber % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+        }
+    } // End Get Suffix
 
 } // END CLASS

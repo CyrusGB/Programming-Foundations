@@ -35,21 +35,28 @@ public class MultiColumnMenu {
         // Display Menu -----
 
         // Print menu name
-        System.out.println(strName);
+
+        // Have menu name be printed in the center of 
+        String strSpaces = ""; // Padding
+        for (int intSpaces = 0; intSpaces < (25 * intNumColumns / 2) - ((strName.length() / 2)) + (intNumColumns - 1 * 3); intSpaces++) { // Add padding
+            strSpaces += " ";
+        }
+
+        // Print Name
+        System.out.println(" | " + strSpaces + strName + strSpaces + " | ");
         
         // Show items
-        String strOut = "";
+        String strOut = ""; // String to be printed
 
-        for (int i = 0; i < lstItems.size(); i++) {
-            if(i % intNumColumns == 0){
+        for (int i = 0; i < lstItems.size(); i++) { // Add items as formatted list
+            if(i % intNumColumns == 0){ // New row
                 strOut +="\n" + String.format("%-25s", i+1+ ". " + lstItems.get(i));
-            }else{
-                strOut += String.format("%-25s", i+1 + ". " + lstItems.get(i));
+            }else{ // Continue Row
+                strOut += " | " + String.format("%-25s", i+1 + ". " + lstItems.get(i));
             }
-
         }
         
-        System.out.println(strOut);
+        System.out.println(strOut); // Prints all the items
 
         // Item selection -----
         
@@ -57,14 +64,14 @@ public class MultiColumnMenu {
         int intChoice = 0;
         
         // Keep asking until correct answer from user
-        // while(intChoice <= 0 || intChoice > lstMenuItems.size()){
-        //     // Prompt user and wait for input
-        //     System.out.print("\n" + strPrompt);
-        //     intChoice = userInput.nextInt();
-        // }
+        while(intChoice <= 0 || intChoice > lstItems.size()){
+            // Prompt user and wait for input
+            System.out.print("\n" + strPrompt);
+            intChoice = userInput.nextInt();
+        }
         
         // Return the selection
-        return intChoice;
+        return intChoice - 1;
         
     } // END showMenu()
     
