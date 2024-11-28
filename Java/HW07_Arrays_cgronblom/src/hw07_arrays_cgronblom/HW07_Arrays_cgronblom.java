@@ -1,8 +1,8 @@
 /************************
- * Title:
- * Date:
+ * Title: Arrays
+ * Date: 11/28/24
  * Author: Cyrus Gronblom
- * Purpose:
+ * Purpose: Show how we can use arrays to store and access multiple items
  * **********************
  * https://keene.instructure.com/courses/2289958/assignments/33878306
  */
