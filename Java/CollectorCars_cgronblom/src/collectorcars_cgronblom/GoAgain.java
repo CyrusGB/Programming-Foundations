@@ -9,6 +9,9 @@
 package collectorcars_cgronblom;
 
 import java.util.Scanner;
+
+import hw08_arraysofobjects_cgronblom.Car;
+
 import java.util.ArrayList;
 
 public class GoAgain {

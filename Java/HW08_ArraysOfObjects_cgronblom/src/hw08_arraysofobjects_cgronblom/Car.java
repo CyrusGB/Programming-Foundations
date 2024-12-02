@@ -6,7 +6,7 @@
  * **********************
  */
 
-package collectorcars_cgronblom;
+package hw08_arraysofobjects_cgronblom;
 
 public class Car { // Car Class
 
@@ -26,13 +26,12 @@ public class Car { // Car Class
         this.strColor = strColor;
     } // End Constructor
 
-    public String toString(){
+    public String toString(){ // Converts the cars data into printable data
         return "----------\n"
              + "Year: " + intYear + "\n"
              + "Make: " + strMake + "\n"
              + "Model: " + strModel + "\n"
-             + "Color" + strColor + "\n"
-             + "----------";
+             + "Color: " + strColor;
     }
 
     // Accessors

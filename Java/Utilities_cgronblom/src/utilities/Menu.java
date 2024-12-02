@@ -26,8 +26,8 @@ public class Menu {
         System.out.println(strMenuName);
         
         // Show items
-        for (int intMenuItem = 1; intMenuItem < lstMenuItems.size() + 1; intMenuItem++) {
-            System.out.println(intMenuItem + ". " + lstMenuItems.get(intMenuItem - 1));
+        for (int intMenuItem = 0; intMenuItem < lstMenuItems.size(); intMenuItem++) {
+            System.out.println(intMenuItem + ". " + lstMenuItems.get(intMenuItem));
         }
         
         // Item selection -----
@@ -43,7 +43,7 @@ public class Menu {
         }
         
         // Return the selection
-        return intChoice;
+        return intChoice - 1;
         
     } // END showMenu()
     

@@ -48,13 +48,10 @@ public class GoAgain {
             String playerName = userInput.nextLine();
             
             // Starting money
-            float startingMoney = 500.0f;
+            float startingMoney = 100.0f;
 
             // Create new player object
             CrapsPlayer player = new CrapsPlayer(playerName, startingMoney);
-            
-            // Display player data
-            System.out.println(player);
             
             // Show play menu
             showPlayMenu(player);
@@ -221,17 +218,17 @@ public class GoAgain {
         menuItems.add("Hop Bet (Bet on a dice value)");
         menuItems.add("Ready to play");
 
-        Menu playMenu = new Menu();
-        int selection = playMenu.showMenu("Play Menu", menuItems);
+        MultiColumnMenu playMenu = new MultiColumnMenu("Play Menu", "Choose an option: ", menuItems, 1);
+        int selection = playMenu.showMenu();
 
         switch (selection) {
-            case 1: // Normal Bet
+            case 0: // Normal Bet
                 bet(player);
                 break;
-            case 2: // Hop bet
+            case 1: // Hop bet
                 hopBet(player);    
                 break;    
-            case 3: // Play a round
+            case 2: // Play a round
                 playARound(player);
                 break;  
         }
@@ -271,11 +268,14 @@ public class GoAgain {
         }
         
 
-        System.out.print("Keep playing?: ");
+        System.out.print("\nKeep playing?: ");
         @SuppressWarnings("resource")
         Scanner keepPlay = new Scanner(System.in);
         boolean boolKeep = keepPlay.next().equalsIgnoreCase("y");
         if (boolKeep) {
+            player.bet = 0;
+            player.hopBet = 0;
+            player.desiredDiceValue = 0;
             showPlayMenu(player);
         }
 
@@ -299,14 +299,14 @@ public class GoAgain {
         // Lowest possible bet
         float currentMaxbet = 5.00f;
         // Add bet possibities
-        while(currentMaxbet < player.currentMoney && currentMaxbet < player.currentMoney/10){
+        while(currentMaxbet < player.currentMoney + 5 && currentMaxbet < 50){
             betOptions.add("$" + String.format("%,3.2f", currentMaxbet));
-            currentMaxbet += 10.00f;
+            currentMaxbet += 5.00f;
         } 
         
-        Menu betMenu = new Menu();
+        MultiColumnMenu betMenu = new MultiColumnMenu(menuName, "Choose a bet: ", betOptions, 3);
         
-        return betMenu.showMenu(menuName , betOptions) * 10 - 5;
+        return ((betMenu.showMenu() + 1) * 10) - 5;
     }
 
     // Bet on a win

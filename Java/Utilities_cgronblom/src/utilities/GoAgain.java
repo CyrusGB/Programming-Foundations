@@ -9,7 +9,6 @@
 package utilities;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -81,6 +80,7 @@ public class GoAgain {
             // Read user input
             strkeepGoing = userInput.next();
             System.out.println("");
+            userInput.close();
             
         } // END while()
         

@@ -1,8 +1,8 @@
 /************************
- * Title:
- * Date:
+ * Title: Arrays Of Objects
+ * Date: 12/2/24
  * Author: Cyrus Gronblom
- * Purpose:
+ * Purpose: Display how we can use lists to store objects and access them
  * **********************
  */
 
@@ -17,7 +17,7 @@ public class HW08_ArraysOfObjects_cgronblom {
         GoAgain goAgain = new GoAgain();
         
         // Print Title
-        title.printTitle("Example Title", "Example Tagline");
+        title.printTitle("Car Garage", "Trade in cars");
 
         // Start the loop and ask user if they want to go again after
         goAgain.goAgain();
