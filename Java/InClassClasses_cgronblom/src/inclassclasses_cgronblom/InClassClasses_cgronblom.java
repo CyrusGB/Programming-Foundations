@@ -1,8 +1,8 @@
 /************************
- * Title:
- * Date:
+ * Title: In Class Classes
+ * Date: 12/4/24
  * Author: Cyrus Gronblom
- * Purpose:
+ * Purpose: Show how we can use classes and java gui to make cool programs
  * **********************
  */
 
@@ -17,7 +17,7 @@ public class InClassClasses_cgronblom {
         GoAgain goAgain = new GoAgain();
         
         // Print Title
-        title.printTitle("Example Title", "Example Tagline");
+        title.printTitle("In Class Classes", "we using classes now");
 
         // Start the loop and ask user if they want to go again after
         goAgain.goAgain();

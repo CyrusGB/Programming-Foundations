@@ -10,7 +10,9 @@ package inclassclasses_cgronblom;
 
 import java.util.Scanner;
 
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+import inclassclasses_cgronblom.Shapes.Rectangle;
 
 public class GoAgain {
     
@@ -31,13 +33,16 @@ public class GoAgain {
             // Add Source code here
             // --------------------
 
-           
+            String[] arrStrRectDimensions = JOptionPane.showInputDialog("Please insert the width and height of a rectangle/square (\"width\"x\"height\"):").split("x");
+            double[] arrDoubleRectDimensions = {Double.parseDouble(arrStrRectDimensions[0]), Double.parseDouble(arrStrRectDimensions[1])};
+            Rectangle rect = new Rectangle(arrDoubleRectDimensions[0], arrDoubleRectDimensions[1]);
+            System.out.println(rect.calculateRectangle());
 
             // --------------------
             // End Source Code
             
             // Ask user to run again
-            System.out.print("\nWould you like to trade in another?: ");
+            System.out.print("\nWould you like to run again?: ");
             // Read user input
             strkeepGoing = userInput.next();
             System.out.println("");

@@ -41,6 +41,7 @@ public class GoAgain {
             
             ArrayList<Car> lstCars = new ArrayList<Car>();
 
+            @SuppressWarnings("unused")
             Car carGolf = addCar(lstCars, 1982, "Volkswagen", "Golf GTI Mk2", "Midnight Blue-Pearl");
 
             // --------------------
