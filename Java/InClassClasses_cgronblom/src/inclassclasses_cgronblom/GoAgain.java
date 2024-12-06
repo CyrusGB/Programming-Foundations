@@ -12,7 +12,9 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import inclassclasses_cgronblom.Shapes.Circle;
 import inclassclasses_cgronblom.Shapes.Rectangle;
+import inclassclasses_cgronblom.Shapes.Triangle;
 
 public class GoAgain {
     
@@ -33,10 +35,44 @@ public class GoAgain {
             // Add Source code here
             // --------------------
 
+            // Get Rectangle dimensions
             String[] arrStrRectDimensions = JOptionPane.showInputDialog("Please insert the width and height of a rectangle/square (\"width\"x\"height\"):").split("x");
-            double[] arrDoubleRectDimensions = {Double.parseDouble(arrStrRectDimensions[0]), Double.parseDouble(arrStrRectDimensions[1])};
-            Rectangle rect = new Rectangle(arrDoubleRectDimensions[0], arrDoubleRectDimensions[1]);
-            System.out.println(rect.calculateRectangle());
+            // Create new rectangle from dimensions
+            Rectangle rect = new Rectangle(Double.parseDouble(arrStrRectDimensions[0]), Double.parseDouble(arrStrRectDimensions[1]));
+            // Print data
+            System.out.println(rect);
+
+            // Points from user
+            double[][] arrPointsFromUser = new double[3][2];
+            // Collect points
+            // First point
+            String[] arrStrPoint = JOptionPane.showInputDialog("Please insert the first point of a triangle (\"x,y\"):").split(",");
+            double[] arr1stPt = {Double.parseDouble(arrStrPoint[0]), Double.parseDouble(arrStrPoint[1])};
+
+            // Second Point
+            arrStrPoint = JOptionPane.showInputDialog("Please insert the second point of a triangle (\"x,y\"):").split(",");
+            double[] arr2ndPt = {Double.parseDouble(arrStrPoint[0]), Double.parseDouble(arrStrPoint[1])};
+
+            // Last point
+            arrStrPoint = JOptionPane.showInputDialog("Please insert the third point of a triangle (\"x,y\"):").split(",");
+            double[] arr3rdPt = {Double.parseDouble(arrStrPoint[0]), Double.parseDouble(arrStrPoint[1])};
+
+            // Set points
+            arrPointsFromUser[0] = arr1stPt;
+            arrPointsFromUser[1] = arr2ndPt;
+            arrPointsFromUser[2] = arr3rdPt;
+
+            // Create triangle from points
+            Triangle tri = new Triangle(arrPointsFromUser);
+            // Print data
+            System.out.println(tri);
+
+            // Get radius
+            double dblRad = Double.parseDouble(JOptionPane.showInputDialog("Please insert the radius of a circle: "));
+            // Create circle from radius
+            Circle circ = new Circle(dblRad);
+            // Print data
+            System.out.println(circ);
 
             // --------------------
             // End Source Code

@@ -1,3 +1,11 @@
+/************************
+ * Title: Rectangle
+ * Date: 12/6/24
+ * Author: Cyrus Gronblom
+ * Purpose: Stores data for a rectangle.
+ * **********************
+ */
+
 package inclassclasses_cgronblom.Shapes;
 
 public class Rectangle {
@@ -52,7 +60,13 @@ public class Rectangle {
     // Formatted output
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        // Return string
+        String reString = " Rectangle \n" + 
+                          " ---------- \n" +
+                          " \tWidth: " + getdoubleWidth() + "\n" +
+                          " \tHeight: " + getdoubleHeight() + "\n" + 
+                          " ---------- \n" +
+                          " \tArea: " + calculateRectangle() + "\n";
+        return reString;
     }
 }

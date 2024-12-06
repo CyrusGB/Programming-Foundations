@@ -1,3 +1,11 @@
+/************************
+ * Title: Circle
+ * Date: 12/6/24
+ * Author: Cyrus Gronblom
+ * Purpose: Stores data for a Circle.
+ * **********************
+ */
+
 package inclassclasses_cgronblom.Shapes;
 
 public class Circle {
@@ -35,7 +43,12 @@ public class Circle {
     // Formatted output
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        // Return string
+        String reString = " Circle \n" + 
+                          " ---------- \n" +
+                          " \tRadius: " + getdoubleRadius() + "\n" +
+                          " ---------- \n" +
+                          " \tArea: " + calculateCircle() + "\n";
+        return reString;
     }
 }
