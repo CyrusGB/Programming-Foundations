@@ -14,13 +14,12 @@ public class GUIMPGCalculator_cgronblom {
         
         // Create new instances of title and go again
         Title title = new Title();
-        GoAgain goAgain = new GoAgain();
         
         // Print Title
-        title.printTitle("Example Title", "Example Tagline");
+        title.printTitle("MPG Calculator GUI", "MILES PER GALLON AND STUFF");
 
-        // Start the loop and ask user if they want to go again after
-        goAgain.goAgain();
+        CalculatorGUI gui = new CalculatorGUI();
+        gui.loadGUI();
 
     } // END MAIN
 

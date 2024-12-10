@@ -10,17 +10,21 @@ package guimpgcalculator_cgronblom;
 
 import java.util.Scanner;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class GoAgain {
-    
+
+    // Create new instance of scanner class for user input
+    Scanner userInput = new Scanner(System.in);
+
+    // String to hold user input (y/n)
+    String strkeepGoing = "y";
+
     // Ask user if they want to continue the loop
     public void goAgain(){
-        
-        // Create new instance of scanner class for user input
-        Scanner userInput = new Scanner(System.in);
-        
-        // String to hold user input (y/n)
-        String strkeepGoing = "y";
         
         // While loop
         while(strkeepGoing.equalsIgnoreCase("y") || strkeepGoing.equalsIgnoreCase("yes")){
@@ -30,17 +34,17 @@ public class GoAgain {
             // Add Source code here
             // --------------------
             
-            // Get input from user
-            System.out.print("Enter Miles: ");
+            CalculatorGUI gui = new CalculatorGUI();
+            gui.loadGUI();
+
             // Miles traveled
-            float miles = userInput.nextFloat();
+            float miles = 0f;
             // KM's traveled
             float kilometers = miles * 1.609344f;
             
-            System.out.print("Enter Gallons: ");
             
             // Gallons used
-            float gallons = userInput.nextFloat();
+            float gallons = 0f;
             // Liters used
             float liters = gallons * 3.785f;
             
@@ -48,9 +52,13 @@ public class GoAgain {
             float mPG = miles / gallons;
             // Calculate liters per 100 kilometers
             float lP100km = liters / kilometers * 100;
+
+            
             
             // Print out fuel efficiency
-            System.out.println("\nYour car achieved a fuel efficiency of " + (int) mPG + " MPG and " + (int) lP100km + " L/100KM.");
+            // System.out.println("\nYour car achieved a fuel efficiency of " + (int) mPG + " MPG and " + (int) lP100km + " L/100KM.");
+
+            
             
             // --------------------
             // End Source code
@@ -62,7 +70,42 @@ public class GoAgain {
             System.out.println("");
             
         } // END while()
+
+        userInput.close();
         
     } // END goAgain()
+
+    // public JFrame createFrame(){
+    //     JFrame frame = new JFrame("MPG Calculator");
+
+    //     JPanel panel = new JPanel();
+
+    //     JLabel milesLabel = new JLabel("Miles traveled:");
+    //     JTextField milesField = new JTextField(10);
+    //     JLabel galLabel = new JLabel("Gallons used:");
+    //     JTextField gallonsField = new JTextField(10);
+    //     JButton calculateButton = new JButton("Calculate");
+        
+    //     panel.add(milesLabel);
+    //     panel.add(milesField);
+    //     panel.add(galLabel);
+    //     panel.add(gallonsField);
+    //     panel.add(calculateButton);
+
+    //     frame.add(panel);
+
+    //     frame.setSize(400, 400);
+    //     frame.pack();
+
+    //     calculateButton.addActionListener(new ActionListener() {
+    //         @Override
+    //         public void actionPerformed(ActionEvent e) {
+    //             String strGal = gallonsField.getText();
+    //             System.out.println("Text entered: " + strGal);
+    //         }
+    //     });
+
+    //     return frame;
+    // }
     
 } // END CLASS
